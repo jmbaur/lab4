@@ -66,9 +66,9 @@
   {University Science Books},\ \bibinfo {year} {1996})\BibitemShut {NoStop}%
 \bibitem [{oxy(2018)}]{oxymanual}%
   \BibitemOpen
-  \href@noop {} {\emph {\bibinfo {title} {The Zeeman Effect}}},\ \bibinfo
-  {organization} {Occidental College Physics Department} (\bibinfo {year}
-  {2018})\BibitemShut {NoStop}%
+  \href@noop {} {\emph {\bibinfo {title} {The Lifetime of the Muon}}},\
+  \bibinfo {organization} {Occidental College Physics Department} (\bibinfo
+  {year} {2018})\BibitemShut {NoStop}%
 \bibitem [{Flu(2006)}]{Fluke}%
   \BibitemOpen
   \href@noop {} {\emph {\bibinfo {title} {Model 77 Series IV Digital Multimeter
