@@ -51,6 +51,11 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
+\bibitem [{oxy(2018)}]{oxymanual}%
+  \BibitemOpen
+  \href@noop {} {\emph {\bibinfo {title} {The Lifetime of the Muon}}},\
+  \bibinfo {organization} {Occidental College Physics Department} (\bibinfo
+  {year} {2018})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Tipler}\ and\ \citenamefont
   {Llewellyn}(1978)}]{Tipler1978}%
   \BibitemOpen
@@ -64,11 +69,6 @@
   {} {\emph {\bibinfo {title} {An Introduction to Error Analysis: The Study of
   Uncertainties in Physical Measurements, 2nd Ed.}}}\ (\bibinfo  {publisher}
   {University Science Books},\ \bibinfo {year} {1996})\BibitemShut {NoStop}%
-\bibitem [{oxy(2018)}]{oxymanual}%
-  \BibitemOpen
-  \href@noop {} {\emph {\bibinfo {title} {The Lifetime of the Muon}}},\
-  \bibinfo {organization} {Occidental College Physics Department} (\bibinfo
-  {year} {2018})\BibitemShut {NoStop}%
 \bibitem [{Flu(2006)}]{Fluke}%
   \BibitemOpen
   \href@noop {} {\emph {\bibinfo {title} {Model 77 Series IV Digital Multimeter
