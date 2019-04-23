@@ -137,6 +137,8 @@ The next step of calibration was for the MCA time scale. The pulse generator was
 
 Collecting data for this experiment was as simple as replacing the input to the CFD (discriminator) from the pulse generator to the PMT from the scintillator box. This allowed for pulses from decaying muons in the box to be collected instead of constant pulses from the generator. The MAESTRO software provided was used to collect counts of decay events occurring in the scintillator box.
 
+Data was collected over the time of about a 72-hour period to allow for a large sample of decay events to be recorded. This large sample period minimizes the uncertainty when calculating the lifetime of the muon due to the increased number of values near the actual lifetime versus outlier values.
+
 \section{\label{sec:level4}Data Analysis}
 
 A long experimental run of 72 hours was run at a CFD value of 1 *to-do:units* and TAC value of *to-do: fill in value*. Figures 2, 3, and 4 are representative of three different sample events captured with the oscilloscope single shot mode. The yellow pulses in the figure represent the actual decay events. The first pulse is the muon creation, followed by a second pulse, the end of life of the muon. The green pulse is the output from the TAC, with an amplitude related to the time-separation of the green pulses. The measured time of decay for these sample events are *to-do:measure these* *, *, and *, respectively.
@@ -147,6 +149,23 @@ A long experimental run of 72 hours was run at a CFD value of 1 *to-do:units* an
 	\subfloat{\includegraphics[width=2.3in]{B.png}}\hfill
 	\subfloat{\includegraphics[width=2.3in]{C.png}}
 	\caption{Sample muon decay events, taken with the oscilloscope single shot mode.}
+\end{figure}
+
+The histogram captured from the MAESTRO software is shown in Figure 3. The data was exported in ASCII format and uploaded into Microsoft Excel for analysis. *to-do: explain channel time width*
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{unfiltered.png}
+	\caption{The histogram of counts for pulse events where pulses are only detected if their amplitude is above the discriminator trigger value.}
+\end{figure}
+
+*to-do: talk about subtracting background*
+Channels 221 to 500 were averaged to conclude a background value of 78.8. This background was subtracted from the decay curve (channels 0 to 220) and shown in Figure 4. A best-fit line was applied to the filtered data, providing a slope of *to-do*.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{filtered.png}
+	\caption{After the background has been subtracted from the histogram, the following is left over. The slope of the best-fit line represents the lifetime of the muon.}
 \end{figure}
 
 \section{\label{sec:level5}Conclusion}
