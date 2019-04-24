@@ -46,6 +46,7 @@ floatfix,
 \usepackage{bm}% bold math
 \usepackage{float}
 \usepackage[caption=false]{subfig}
+\usepackage{textcomp}
 %\usepackage[mathlines]{lineno}% Enable numbering of text and display math
 %\linenumbers\relax % Commence numbering lines
 
@@ -152,6 +153,15 @@ A long experimental run of 72 hours was run at a CFD value of 1 *to-do:units* an
 \end{figure}
 
 The histogram captured from the MAESTRO software is shown in Figure 3. The data was exported in ASCII format and uploaded into Microsoft Excel for analysis. *to-do: explain channel time width*
+% 500 channels
+% 100 nanoseconds
+% 100 multiplier
+% 0.05 microseconds per channel
+% 2.2 seconds is around channel 110
+
+% singles rate:
+% 1200 for one minute
+% according to wikipedia: should get 600 per minute for a box of 0.05% size of 1m^2
 
 \begin{figure}[H]
 	\centering
@@ -159,8 +169,7 @@ The histogram captured from the MAESTRO software is shown in Figure 3. The data 
 	\caption{The histogram of counts for pulse events where pulses are only detected if their amplitude is above the discriminator trigger value.}
 \end{figure}
 
-*to-do: talk about subtracting background*
-Channels 221 to 500 were averaged to conclude a background value of 78.8. This background was subtracted from the decay curve (channels 0 to 220) and shown in Figure 4. A best-fit line was applied to the filtered data, providing a slope of *to-do*.
+In Figure 3, there is a point where the decay curve flattens out into the “background". The background is due to discriminator pulses randomly occurring above the trigger value that was set. Channels 221 to 500 were averaged to conclude a background value of 78.8. This background was subtracted from the decay curve (channels 0 to 220) and shown in Figure 4. A best-fit line was applied to the filtered data, providing a slope of $-2.25 \pm 0.04$ \textmu s. The standard error of the slope was provided by applying a regression analysis to the data.
 
 \begin{figure}[H]
 	\centering
