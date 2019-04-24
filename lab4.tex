@@ -132,7 +132,13 @@ The apparatus of this experiment consists of five main parts: (1) an Ortec 556 H
 
 Calibration of the apparatus was completed in two steps. First, the CFD was calibrated by using a pulse generator to send of pulses of a fixed amplitude to the CFD. The signal from the pulse generator was connected to the CFD input using a T-connector, which was then routed to the oscilloscope. The CFD was adjusted so that the pulses were output to the screen of the oscilloscope with minimal noise. This process was repeated for various pulse amplitudes in order to find a proper CFD value for differing conditions.
 
-The next step of calibration was for the MCA time scale. The pulse generator was set to output two pulses at a time $\Delta t$ apart. The “measure” menu on the oscilloscope allows for easy measurement of this time separation. These dual pulse signals were then sent to the CFD, which would thus filter the signals based on the time separation, not the amplitude of the pulse. The CFD was set so that the oscilloscope consistently gave an output. The oscilloscope was set for two outputs, one from the CFD and another from the MCA. During a muon decay event, the dual channel oscilloscope setup on the screen looks like two large pulses at a short distance from one another for the CFD output. For the MCA output, this event is one rectangular pulse that varies in amplitude based on the time separation of the CFD pulses.
+The next step of calibration was for the MCA time scale. The pulse generator was set to output two pulses at a time $\Delta t$ apart. The “measure” menu on the oscilloscope allows for easy measurement of this time separation. These dual pulse signals were then sent to the CFD, which would thus filter the signals based on the time separation, not the amplitude of the pulse. The CFD was set so that the oscilloscope consistently gave an output. The oscilloscope was set for two outputs, one from the CFD and another from the MCA. During a muon decay event, the dual channel oscilloscope setup on the screen looks like two large pulses at a short distance from one another for the CFD output. For the MCA output, this event is one rectangular pulse that varies in amplitude based on the time separation of the CFD pulses. The expected MCA time scale separation for each channel is 0.05 \textmu s since the MAESTRO software used to measure event counts provides 500 channels, and the TAC was set to a range of 100 ns with a multiplier of 100. This means that there is a range of 10 \textmu s across all channels, and a time scale of 0.02 \textmu s per channel. This was tested using the pulse generator, sending a pulse of 2 \textmu s across (confirmed by the oscilloscope). The expected location of this dual pulse system on the MAESTRO software would be on channel 100 (at this channel, counts are recorded for pulses at 2 \textmu s).
+% 500 channels
+% 100 nanoseconds
+% 100 multiplier
+% 0.02 microseconds per channel
+% 2.2 microseconds is around channel 110
+
 
 \subsection{Data Collection}
 
@@ -142,7 +148,7 @@ Data was collected over the time of about a 72-hour period to allow for a large 
 
 \section{\label{sec:level4}Data Analysis}
 
-A long experimental run of 72 hours was run at a CFD value of 1 *to-do:units* and TAC value of *to-do: fill in value*. Figures 2, 3, and 4 are representative of three different sample events captured with the oscilloscope single shot mode. The yellow pulses in the figure represent the actual decay events. The first pulse is the muon creation, followed by a second pulse, the end of life of the muon. The green pulse is the output from the TAC, with an amplitude related to the time-separation of the green pulses. The measured time of decay for these sample events are *to-do:measure these* *, *, and *, respectively.
+A long experimental run of 72 hours was run at a CFD value of 1.5 V at the previously mentioned TAC value of 100 ns at a multiplier of 100. Figures 2, 3, and 4 are representative of three different sample events captured with the oscilloscope single shot mode. The yellow pulses in the figure represent the actual decay events. The first pulse is the muon creation, followed by a second pulse, the end of life of the muon. The green pulse is the output from the TAC, with an amplitude related to the time-separation of the green pulses.
 
 \begin{figure}[H]
 	\centering
@@ -152,16 +158,7 @@ A long experimental run of 72 hours was run at a CFD value of 1 *to-do:units* an
 	\caption{Sample muon decay events, taken with the oscilloscope single shot mode.}
 \end{figure}
 
-The histogram captured from the MAESTRO software is shown in Figure 3. The data was exported in ASCII format and uploaded into Microsoft Excel for analysis. *to-do: explain channel time width*
-% 500 channels
-% 100 nanoseconds
-% 100 multiplier
-% 0.05 microseconds per channel
-% 2.2 seconds is around channel 110
-
-% singles rate:
-% 1200 for one minute
-% according to wikipedia: should get 600 per minute for a box of 0.05% size of 1m^2
+The histogram captured from the MAESTRO software for all 500 channels is shown in Figure 3, the data was exported into ASCII format for analysis.
 
 \begin{figure}[H]
 	\centering
@@ -169,13 +166,16 @@ The histogram captured from the MAESTRO software is shown in Figure 3. The data 
 	\caption{The histogram of counts for pulse events where pulses are only detected if their amplitude is above the discriminator trigger value.}
 \end{figure}
 
-In Figure 3, there is a point where the decay curve flattens out into the “background". The background is due to discriminator pulses randomly occurring above the trigger value that was set. Channels 221 to 500 were averaged to conclude a background value of 78.8. This background was subtracted from the decay curve (channels 0 to 220) and shown in Figure 4. A best-fit line was applied to the filtered data, providing a slope of $-2.25 \pm 0.04$ \textmu s. The standard error of the slope was provided by applying a regression analysis to the data.
+In Figure 3, there is a point where the decay curve flattens out into the “background". The background is due to discriminator pulses randomly occurring above the trigger value that was set. Channels 221 to 500 were averaged to conclude a background value of 78.8. The rate that muons hit the Earth's surface every minute is 10,000 per square meter\cite{Wolverton2007}. The scintillator box is about 5\% the size of one square meter, so we expect around 5\% of the 10,00 muon particles to appear every minute (about 500 mouns per minute). However, after connecting the positive output from the discriminator to the MCA and monitoring for 1 minute, 1200 events are recorded. The calculated background is 78.8, so subtracting this from the observed events tells us that about 1120 muons are entering the box every minute. This just over double the value we expect, but this may be due to the significant height of the scintillator box, thus adding a significant amount of surface area for muons to be collected (assuming muons are not entering the box only from the top). The ratio of muon decay rate to the singles rate (the rate at which mouns hit the box) is thus 1120:1200, or about 93\%. The background was subtracted from the data in Figure 3 that represent the decay curve (channels 0 to 220). This data, filtered to show only muon decay events, is shown in Figure 4.
+
+A best-fit line was applied to the filtered data, providing a slope of $-2.25 \pm 0.04$ \textmu s. The standard error of the slope was provided by applying a regression analysis to the data.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{filtered.png}
 	\caption{After the background has been subtracted from the histogram, the following is left over. The slope of the best-fit line represents the lifetime of the muon.}
 \end{figure}
+
 
 \section{\label{sec:level5}Conclusion}
 
