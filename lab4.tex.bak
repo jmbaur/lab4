@@ -46,6 +46,7 @@ floatfix,
 \usepackage{bm}% bold math
 \usepackage{float}
 \usepackage[caption=false]{subfig}
+\usepackage{textcomp}
 %\usepackage[mathlines]{lineno}% Enable numbering of text and display math
 %\linenumbers\relax % Commence numbering lines
 
@@ -68,7 +69,7 @@ floatfix,
 
 \begin{abstract}
 
-	Insert abstract here.
+	Muons appear from high energy cosmic ray protons that enter the upper atmosphere and collide with nuclei. This collision produces pions, which then decay into muons; these muons decay into electrons, neutrinos and antineutrinos. This decay scheme can be measured in order to calculate the lifetime of the muon. In this experiment, muons are captured in a scintillator box, which produces pulses of light upon the entrance of a muon and the decay of a muon. These light pulses are captured with a photo multiplier tube, which sends electrical pulses in correlation with the light pulses to a discriminator mechanism. The discriminator filters out pulses which are too low to be a muon decay event. After the decay events have been filtered, the pulses are sent to a time-to-amplitude converter, which inputs two pulses and outputs one pulse that has amplitude of the time separation of the input pulses. The new single pulse is sent to a multi-channel analyzer, which creates a histogram of all decay events. The channels of the multi-channel analyzer correspond to time scales, for which decay events accumulate in counts on the histogram. An analysis of the slope of the histogram on the decay curve portion (excludes background decay events) produces the mean lifetime of the muon. For this experiment, the mean lifetime was calculated to be $2.23 \pm 0.04$ \textmu s, which is consistent with the accepted value of 2.2 \textmu s.
 
 \end{abstract}
 
@@ -91,7 +92,35 @@ The decay of a muon is in accordance to the radioactive decay law, which states 
 	P(\delta t) = \lambda \delta t
 \end{equation}
 
-When a muon decays, it splits into separate particles; the muon $\mu^-$ and the antimuon $\mu^+$ decay into the particles given by Equation 2. The variables $\nu_e$ and $\nu_\mu$ are neutrinos with small mass that only interact with the weak and gravitational forces; their respective antiparticles are $\bar{\nu}_e$ and $\bar{\nu}_\mu$.
+Since the total time $t$ is equal to the total number of events $N$ multiplied to the time separation between events $\delta t$, Equation 1 can be rewritten to Equation 2.
+
+\begin{equation}
+	P(t/N) = \lambda \times \frac{t}{N}
+\end{equation}
+
+The probability that a particle decays between time $t$ and time $t + \delta t$ is given in Equation 3 as the product of the individual probabilities.
+
+\begin{equation}
+	P(t+\delta t) = P(t) \times (1-\lambda \delta t)
+\end{equation}
+
+For an infinitesimal time $dt$, Equation 4 can be written. Taking this integral from zero to infinity, as statistically logical, must equal 1.
+
+\begin{equation}
+	dP = -P \lambda dt
+\end{equation}
+
+\begin{equation}
+	- \int_{0}^{\infty} P \lambda dt = 1
+\end{equation}
+
+Thus the probability of a decay event at time $t$ is given in Equation 6.
+
+\begin{equation}
+	P(t) = \lambda e^{-\lambda t}
+\end{equation}
+
+When a muon decays, it splits into separate particles; the muon $\mu^-$ and the antimuon $\mu^+$ decay into the particles given by Equation 7. The variables $\nu_e$ and $\nu_\mu$ are neutrinos with small mass that only interact with the weak and gravitational forces; their respective antiparticles are $\bar{\nu}_e$ and $\bar{\nu}_\mu$.
 
 \begin{equation}
 	\begin{aligned}
@@ -102,13 +131,13 @@ When a muon decays, it splits into separate particles; the muon $\mu^-$ and the 
 
 \section{\label{sec:level3}Apparatus and Methods}
 
-In order to perform this experiment, a continuous source of muons is required. This supply of muons is available from the constant raining of cosmic rays on Earth's atmosphere. These high enery cosmic ray protons enter the upper atmosphere and collide with nuclei A, resulting in pion particles (Equation 3).
+In order to perform this experiment, a continuous source of muons is required. This supply of muons is available from the constant raining of cosmic rays on Earth's atmosphere. These high energy cosmic ray protons enter the upper atmosphere and collide with nuclei A, resulting in pion particles (Equation 8).
 
 \begin{equation}
 	p + A \rightarrow \pi^{\pm}, \pi^0
 \end{equation}
 
-These pions decay and produce the muon particles listed in Equation 4. The muons then decay into the scheme described in Equation 2. This two-step decay scheme produces the framework for the experiment and collection of data.
+These pions decay and produce the muon particles listed in Equation 9. The muons then decay into the scheme described in Equation 7. This two-step decay scheme produces the framework for the experiment and collection of data.
 
 \begin{equation}
 	\begin{aligned}
@@ -119,7 +148,7 @@ These pions decay and produce the muon particles listed in Equation 4. The muons
 \end{equation}
 
 
-The apparatus of this experiment consists of five main parts: (1) an Ortec 556 HV Power Supply, (2) a muon particle box, (3) an Ortec 473A Constant Fraction Discriminator, (4) an Ortec 566 Time to Amplitude Converter, and (5) an Ortec Easy-MCA Multichannel Pulse Height Analyzer. The muon particle box is a scintillator which produces light as muons enter the box due to the plastic lining on the inside. A photomultiplier tube (shown as PMG in Figure 1) captures some of this light and sends electrons (about $10^7$ electrons for every 5 photons) to the Constant Fraction Discriminator (CFD). The decay scheme of the muon within the scintillator box described in Equations 2 and 4 is such that multiple beams of light will be sent from the plastic lining to the PMT. The PMT sends these multiple electron signals to the CFD, which filters out signals below a specified amplitude.
+The apparatus of this experiment consists of five main parts: (1) an Ortec 556 HV Power Supply, (2) a muon particle box, (3) an Ortec 473A Constant Fraction Discriminator, (4) an Ortec 566 Time to Amplitude Converter, and (5) an Ortec Easy-MCA Multichannel Pulse Height Analyzer. The muon particle box is a scintillator which produces light as muons enter the box due to the plastic lining on the inside. A photo multiplier tube (shown as PMT in Figure 1) captures some of this light and sends electrons (about $10^7$ electrons for every 5 photons) to the Constant Fraction Discriminator (CFD). The decay scheme of the muon within the scintillator box described in Equations 2 and 4 is such that multiple beams of light will be sent from the plastic lining to the PMT. The PMT sends these multiple electron signals to the CFD, which filters out signals below a specified amplitude. The CFD, if set to a setting too high, can create its own signals (known as “background”) that end up in the final data results. The pulses that are sent to the CFD and pass through the CFD filter are output to the Time to Amplitude Converter (TAC), which converts the difference in time for a full decay event (two pulses occurring close together) into a single pulse of amplitude proportional to the time separation. The TAC output is sent to the Multi-Channel Pulse Height Analyzer (MCA), which discerns pulse amplitudes and organizes them into a histogram of different “channels”, each channel translating to a time scale for which the decay event occurred.
 
 \begin{figure}[H]
 	\centering
@@ -131,15 +160,23 @@ The apparatus of this experiment consists of five main parts: (1) an Ortec 556 H
 
 Calibration of the apparatus was completed in two steps. First, the CFD was calibrated by using a pulse generator to send of pulses of a fixed amplitude to the CFD. The signal from the pulse generator was connected to the CFD input using a T-connector, which was then routed to the oscilloscope. The CFD was adjusted so that the pulses were output to the screen of the oscilloscope with minimal noise. This process was repeated for various pulse amplitudes in order to find a proper CFD value for differing conditions.
 
-The next step of calibration was for the MCA time scale. The pulse generator was set to output two pulses at a time $\Delta t$ apart. The “measure” menu on the oscilloscope allows for easy measurement of this time separation. These dual pulse signals were then sent to the CFD, which would thus filter the signals based on the time separation, not the amplitude of the pulse. The CFD was set so that the oscilloscope consistently gave an output. The oscilloscope was set for two outputs, one from the CFD and another from the MCA. During a muon decay event, the dual channel oscilloscope setup on the screen looks like two large pulses at a short distance from one another for the CFD output. For the MCA output, this event is one rectangular pulse that varies in amplitude based on the time separation of the CFD pulses.
+The next step of calibration was for the MCA time scale. The pulse generator was set to output two pulses at a time $\Delta t$ apart. The “measure” menu on the oscilloscope allows for easy measurement of this time separation. These dual pulse signals were then sent to the CFD, which would thus filter the signals based on the time separation, not the amplitude of the pulse. The CFD was set so that the oscilloscope consistently gave an output. The oscilloscope was set for two outputs, one from the CFD and another from the MCA. During a muon decay event, the dual channel oscilloscope setup on the screen looks like two large pulses at a short distance from one another for the CFD output. For the MCA output, this event is one rectangular pulse that varies in amplitude based on the time separation of the CFD pulses. The expected MCA time scale separation for each channel is 0.05 \textmu s since the MAESTRO software used to measure event counts provides 500 channels, and the TAC was set to a range of 100 ns with a multiplier of 100. This means that there is a range of 10 \textmu s across all channels, and a time scale of 0.02 \textmu s per channel. This was tested using the pulse generator, sending a pulse of 2 \textmu s across (confirmed by the oscilloscope). The expected location of this dual pulse system on the MAESTRO software would be on channel 100 (at this channel, counts are recorded for pulses at 2 \textmu s).
+% 500 channels
+% 100 nanoseconds
+% 100 multiplier
+% 0.02 microseconds per channel
+% 2.2 microseconds is around channel 110
+
 
 \subsection{Data Collection}
 
 Collecting data for this experiment was as simple as replacing the input to the CFD (discriminator) from the pulse generator to the PMT from the scintillator box. This allowed for pulses from decaying muons in the box to be collected instead of constant pulses from the generator. The MAESTRO software provided was used to collect counts of decay events occurring in the scintillator box.
 
+Data was collected over the time of about a 90-hour period to allow for a large sample of decay events to be recorded. This large sample period minimizes the uncertainty when calculating the lifetime of the muon due to the increased number of values near the actual lifetime versus outlier values. The MAESTRO software was used to collect decay events at all MCA channels. This software provided the ability to show the natural log of the count of events for MCA channels (natural log of Equation 6 provides a linear equation of slope $\lambda$). Thus, finding a best-fit line for the data and finding the slope of this line will give the desired lifetime of the muon.
+
 \section{\label{sec:level4}Data Analysis}
 
-A long experimental run of 72 hours was run at a CFD value of 1 *to-do:units* and TAC value of *to-do: fill in value*. Figures 2, 3, and 4 are representative of three different
+A long experimental run of 90 hours was run at a CFD value of 1.5 V at the previously mentioned TAC value of 100 ns at a multiplier of 100. Figures 2, 3, and 4 are representative of three different sample events captured with the oscilloscope single shot mode. The yellow pulses in the figure represent the actual decay events. The first pulse is the muon creation, followed by a second pulse, the end of life of the muon. The green pulse is the output from the TAC, with an amplitude related to the time-separation of the green pulses.
 
 \begin{figure}[H]
 	\centering
@@ -149,8 +186,28 @@ A long experimental run of 72 hours was run at a CFD value of 1 *to-do:units* an
 	\caption{Sample muon decay events, taken with the oscilloscope single shot mode.}
 \end{figure}
 
+The histogram captured from the MAESTRO software for all 500 channels is shown in Figure 3, the data was exported into ASCII format for analysis.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{unfiltered.png}
+	\caption{The histogram of counts for pulse events where pulses are only detected if their amplitude is above the discriminator trigger value.}
+\end{figure}
+
+In Figure 3, there is a point where the decay curve flattens out into the “background". The background is due to discriminator pulses randomly occurring above the trigger value that was set. Channels 221 to 500 were averaged to conclude a background value of 78.8. The rate that muons hit the Earth's surface every minute is 10,000 per square meter\cite{Wolverton2007}. The scintillator box is about 5\% the size of one square meter, so we expect around 5\% of the 10,00 muon particles to appear every minute (about 500 mouns per minute). However, after connecting the positive output from the discriminator to the MCA and monitoring for 1 minute, 1200 events are recorded. The calculated background is 78.8, so subtracting this from the observed events tells us that about 1120 muons are entering the box every minute. This just over double the value we expect, but this may be due to the significant height of the scintillator box, thus adding a significant amount of surface area for muons to be collected (assuming muons are not entering the box only from the top). The ratio of muon decay rate to the singles rate (the rate at which mouns hit the box) is thus 1120:1200, or about 93\%. The background was subtracted from the data in Figure 3 that represent the decay curve (channels 0 to 220). This data, filtered to show only muon decay events, is shown in Figure 4.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{filtered.png}
+	\caption{After the background has been subtracted from the histogram, the following is left over. The slope of the best-fit line represents the lifetime of the muon.}
+\end{figure}
+
+A best-fit line was applied to the filtered data, providing a slope of $-2.23 \pm 0.04$ \textmu s. The standard error of the slope was provided by applying a regression analysis to the data. The accepted value for the lifetime of the muon is 2.2 \textmu s, so the experimentally calculated value is consistent with this value.
+
+
 \section{\label{sec:level5}Conclusion}
 
+This experiment relies heavily on the proper set up of discriminator value in order to receive an acceptable muon decay rate. There was a 93\% muon decay rate in this particular experiment, however this could be improved with a longer exposure time (this experiment was ran for 90 hours) and a higher discriminator value. This would have filtered out more faulty pulses and produced more accurate muon decay events. A higher discriminator value does have its downside too, however. If a higher discriminator value had been used, there would have been more background in the data since there would have been an increased rate of discriminator pulses entering the system. Regardless of this possible improvement, data analysis on the decay curve produced results that were consistent with the accepted value. A best-fit line (least squares regression) produced a line with slope $-2.23 \pm 0.04$. Since the time scale of the channels of the MCA are in microseconds, this slope translates to a mean lifetime of $2.23 \pm 0.04$ \textmu s, consistent with the accepted value 2.2 \textmu s.
 
 \nocite{*}
 \bibliography{main}% Produces the bibliography via BibTeX.
